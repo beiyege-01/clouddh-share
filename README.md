@@ -18,8 +18,8 @@
 
 ## 下载
 
-- 直接下载：`release/云端数字人-分享版-v1.0.5.zip`（约 20 MB）
-- 或到 [Releases](../../releases) 页面下载同一份
+- 直接下载：[`release/云端数字人-分享版-v1.0.5.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.0.5.zip)（约 20 MB）
+- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.0.5.zip`）
 
 解压后目录：
 
