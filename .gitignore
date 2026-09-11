@@ -1,0 +1,19 @@
+# 本仓库只放"成品包 + 说明"时用不到，但如果你以后把源码也放进来，下面这些绝不能提交：
+res/config.json
+config.json
+*.key
+deepseek-key.txt
+state.bin
+
+# 构建产物 / 生成物
+dist/
+build/
+src/payload.py
+src/keymat.py
+src/static_blob.py
+.buildvenv/
+
+# 本地运行时产物
+*.log
+__pycache__/
+_*/
