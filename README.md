@@ -11,7 +11,6 @@
 
 **▶ [B 站视频教程：https://www.bilibili.com/video/BV1xiYm6fEuN/](https://www.bilibili.com/video/BV1xiYm6fEuN/)**
 
-
 ## 它是什么
 
 一个点开就能和数字人实时语音对话的悬浮窗：
