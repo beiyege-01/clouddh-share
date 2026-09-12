@@ -18,8 +18,8 @@
 
 ## 下载
 
-- 直接下载：[`release/云端数字人-分享版-v1.0.5.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.0.5.zip)（约 20 MB）
-- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.0.5.zip`）
+- 直接下载：[`release/云端数字人-分享版-v1.0.6.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.0.6.zip)（约 20 MB）
+- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.0.6.zip`）
 
 解压后目录：
 
@@ -50,12 +50,13 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 
 | 现象 | 原因 / 处理 |
 |---|---|
+| 双击后**窗口一闪而过 / 什么都没出现** | 悬浮窗（一个隐藏的 PowerShell 进程）没能起来。v1.0.6 起程序会自己检测并弹窗说明，同时把 PowerShell 的原始报错写进 `%LOCALAPPDATA%\CloudDH-Full\shell-stderr.log`。最常见原因是**安全软件拦截**（360 / 火绒 / 腾讯管家 / Defender 对"隐藏窗口的 PowerShell"很敏感）——把解压目录和 `powershell.exe` 加入白名单后重试 |
 | 窗口出来了，但里面是**纯黑一块** | 目标机没有 WebView2 运行时。重新运行 exe，弹窗问"要不要现在装"点「是」；或手动装 `WebView2Setup\` 里的安装器 |
 | 点连线后提示「还没有填 Vidu API Key」 | 先在 ⚙ 面板里填 Key 并保存 |
 | 提示「你的 Vidu 账号里还没有可用形象 / 音色」 | 该账号还没有资产：在面板底部上传一张图片注册形象、上传一段音频克隆音色 |
 | 点连线报「Vidu 创建会话失败: …」 | 报错原文就是原因，常见是余额不足、或该账号未开通实时数字人（Live）能力 |
 | 聊着聊着**自己断了** | 落地页会写明原因（静默超时 / 到达单场上限 / 服务端挂断 / 网络断开）。前两种是护栏，可在面板调长 |
-| 要反馈问题 | 把 `%LOCALAPPDATA%\CloudDH-Full\bridge.log`、`launcher.log`、`runtime\wallpaper-vidu-full.log` 发出来即可定位 |
+| 要反馈问题 | 把 `%LOCALAPPDATA%\CloudDH-Full\` 下的 `launcher.log`、`bridge.log`、`shell-stderr.log`、`shell-stdout.log` 和 `runtime\wallpaper-vidu-full.log` 发给作者即可定位 |
 
 运行时落盘位置：`%LOCALAPPDATA%\CloudDH-Full\`（删掉它就等于恢复出厂：Key、人设、窗口位置全清）。
 
