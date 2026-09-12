@@ -3,7 +3,14 @@
 > 一个 Windows 悬浮窗数字人客户端：**云端包办语音识别 / 大模型 / 语音合成 / 数字人渲染**，本地只负责窗口、麦克风与信令。
 > 底层用 [Vidu](https://platform.vidu.cn) 的实时数字人（S1 Live）能力——**你需要自备 Vidu 账号与 API Key**。
 
-![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red)
+![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
+
+## 📺 视频教程
+
+不想看文字？先看这个（从解压 → 填 Key → 和数字人聊起来）：
+
+**▶ [B 站视频教程：https://www.bilibili.com/video/BV1xiYm6fEuN/](https://www.bilibili.com/video/BV1xiYm6fEuN/)**
+
 
 ## 它是什么
 
@@ -31,6 +38,8 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 ```
 
 ## 快速开始
+
+> 视频版：[B 站视频教程](https://www.bilibili.com/video/BV1xiYm6fEuN/)　·　文字版见下 ↓
 
 1. 解压到一个目录（**exe 和两个 cmd 要放在一起**），双击 `云端数字人-分享版.exe`；
 2. 悬浮窗弹出后，点面板里的 **Vidu API Key** 输入框，粘进你自己的 Key（`vda_` 开头）→ **保存 Key** → 会自动测试连接并告诉你账号里有几个形象/音色；
