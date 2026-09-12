@@ -24,8 +24,8 @@
 
 ## 下载
 
-- 直接下载：[`release/云端数字人-分享版-v1.0.6.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.0.6.zip)（约 20 MB）
-- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.0.6.zip`）
+- 直接下载：[`release/云端数字人-分享版-v1.0.7.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.0.7.zip)（约 20 MB）
+- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.0.7.zip`）
 
 解压后目录：
 
@@ -58,7 +58,7 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 
 | 现象 | 原因 / 处理 |
 |---|---|
-| 双击后**窗口一闪而过 / 什么都没出现** | 悬浮窗（一个隐藏的 PowerShell 进程）没能起来。v1.0.6 起程序会自己检测并弹窗说明，同时把 PowerShell 的原始报错写进 `%LOCALAPPDATA%\CloudDH-Full\shell-stderr.log`。最常见原因是**安全软件拦截**（360 / 火绒 / 腾讯管家 / Defender 对"隐藏窗口的 PowerShell"很敏感）——把解压目录和 `powershell.exe` 加入白名单后重试 |
+| 双击后**窗口一闪而过 / 什么都没出现** | v1.0.7 已修：壳脚本此前缺少 UTF-8 BOM，在标准中文系统（ANSI 代码页 936）上会被 PowerShell 按 GBK 误读而解析失败，壳瞬间退出。现在脚本带 BOM、启动前还会用 PowerShell 解析器预检并弹窗说明。若仍出现，请把 `%LOCALAPPDATA%\CloudDH-Full\launcher.log` 与 `shell-stderr.log` 发出来 |
 | 窗口出来了，但里面是**纯黑一块** | 目标机没有 WebView2 运行时。重新运行 exe，弹窗问"要不要现在装"点「是」；或手动装 `WebView2Setup\` 里的安装器 |
 | 点连线后提示「还没有填 Vidu API Key」 | 先在 ⚙ 面板里填 Key 并保存 |
 | 提示「你的 Vidu 账号里还没有可用形象 / 音色」 | 该账号还没有资产：在面板底部上传一张图片注册形象、上传一段音频克隆音色 |
