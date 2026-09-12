@@ -24,8 +24,8 @@
 
 ## 下载
 
-- 直接下载：[`release/云端数字人-分享版-v1.0.7.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.0.7.zip)（约 20 MB）
-- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.0.7.zip`）
+- 直接下载：[`release/云端数字人-分享版-v1.0.8.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.0.8.zip)（约 20 MB）
+- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.0.8.zip`）
 
 解压后目录：
 
@@ -58,11 +58,12 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 
 | 现象 | 原因 / 处理 |
 |---|---|
-| 双击后**窗口一闪而过 / 什么都没出现** | v1.0.7 已修：壳脚本此前缺少 UTF-8 BOM，在标准中文系统（ANSI 代码页 936）上会被 PowerShell 按 GBK 误读而解析失败，壳瞬间退出。现在脚本带 BOM、启动前还会用 PowerShell 解析器预检并弹窗说明。若仍出现，请把 `%LOCALAPPDATA%\CloudDH-Full\launcher.log` 与 `shell-stderr.log` 发出来 |
+| 双击后**窗口一闪而过 / 什么都没出现** | v1.0.8 已修：壳脚本此前缺少 UTF-8 BOM，在标准中文系统（ANSI 代码页 936）上会被 PowerShell 按 GBK 误读而解析失败，壳瞬间退出。现在脚本带 BOM、启动前还会用 PowerShell 解析器预检并弹窗说明。若仍出现，请把 `%LOCALAPPDATA%\CloudDH-Full\launcher.log` 与 `shell-stderr.log` 发出来 |
 | 窗口出来了，但里面是**纯黑一块** | 目标机没有 WebView2 运行时。重新运行 exe，弹窗问"要不要现在装"点「是」；或手动装 `WebView2Setup\` 里的安装器 |
 | 点连线后提示「还没有填 Vidu API Key」 | 先在 ⚙ 面板里填 Key 并保存 |
 | 提示「你的 Vidu 账号里还没有可用形象 / 音色」 | 该账号还没有资产：在面板底部上传一张图片注册形象、上传一段音频克隆音色 |
 | 点连线报「Vidu 创建会话失败: …」 | 报错原文就是原因，常见是余额不足、或该账号未开通实时数字人（Live）能力 |
+| 点了右上角**退出，界面没了但任务管理器里还有进程** | v1.0.8 已修：那是 WPF 消息循环没被结束导致壳进程卡住（连带启动器一直在等它）。现在关窗会显式结束消息循环，另外启动器还有"窗口已消失 15 秒仍不退就兜底强杀"的第二道保险 |
 | 聊着聊着**自己断了** | 落地页会写明原因（静默超时 / 到达单场上限 / 服务端挂断 / 网络断开）。前两种是护栏，可在面板调长 |
 | 要反馈问题 | 把 `%LOCALAPPDATA%\CloudDH-Full\` 下的 `launcher.log`、`bridge.log`、`shell-stderr.log`、`shell-stdout.log` 和 `runtime\wallpaper-vidu-full.log` 发给作者即可定位 |
 
