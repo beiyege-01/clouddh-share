@@ -3,7 +3,7 @@
 > 一个 Windows 悬浮窗数字人客户端：**云端包办语音识别 / 大模型 / 语音合成 / 数字人渲染**，本地只负责窗口、麦克风与信令。
 > 底层用 [Vidu](https://platform.vidu.cn) 的实时数字人能力（**S2 Live**：`/live/s_avatar/realtime`）——**你需要自备 Vidu 账号与 API Key**。
 
-![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.0-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
+![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.1-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
 
 ## 📺 视频教程
 
@@ -23,6 +23,16 @@
 - **形象 / 音色 / 人设**：用你自己 Vidu 账号里的资产，面板里直接切换；也能**上传图片注册形象**、**上传音频克隆音色**，S2 还支持**直接拿一张图当形象**（不用先注册资产）
 - **安全护栏**：静默自动挂断 + 单场时长上限（都可在面板调整，带花费估算），防止忘挂断烧钱
 - **断线自愈**：信令掉线自动重连（同一场会话内恢复，不重新计费）；断开原因会写在落地页
+
+## v1.1.1 修复与改进
+
+- **🎭 面板不再让人误会**：加了显式说明「参考图 = 要合成到画面里的元素（衣服 / 背景 / 手持物），**不是换这个人**」，并给出换形象的正确路径；选不同类型时下方会显示对应提示（换装传衣服图、换背景传场景图、手持物传物品图）。
+- **换装结果直接告诉你成没成**：以前只报"已下发"，现在是**等云端回执**再显示「✓ 云端已确认」或「✗ 云端拒绝 + 中文原因」（错误码已翻译，例如"当前会话不是 S2 模型"/"云端拉不到这张参考图"/"渲染侧还没就绪，等几秒再发"）。
+- **修一个后台报错**：打开设置面板时 `/api/live/recording` 会因空状态抛 500（用户界面无感，但日志里一直报）。现已修好。
+
+> ⚠️ **换装的两条经验（实测踩出来的）**：
+> ① **画面里没有的东西改不了** —— 如果你的形象图是胸像（看不到腿脚），让她"换上白色袜子"就只能瞎改或者把画面别处改崩。想换下半身，先把形象换成**全身照**（挂断 → ⚙ → 直接用一张图 → 重连）。
+> ② **她说"好哒，换好啦"不代表画面真的变了** —— 那只是模型的话术，判断生效只能看画面。
 
 ## v1.1.0 新增（适配 Vidu S2）
 
@@ -45,8 +55,8 @@
 
 ## 下载
 
-- 直接下载：[`release/云端数字人-分享版-v1.1.0.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.1.0.zip)（约 20 MB）
-- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.1.0.zip`）
+- 直接下载：[`release/云端数字人-分享版-v1.1.1.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.1.1.zip)（约 20 MB）
+- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.1.1.zip`）
 
 解压后目录：
 
@@ -87,7 +97,8 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 | 点连线后提示「还没有填 Vidu API Key」 | 先在 ⚙ 面板里填 Key 并保存 |
 | 提示「你的 Vidu 账号里还没有可用形象 / 音色」 | 该账号还没有资产：在面板底部上传一张图片注册形象、上传一段音频克隆音色；S2 下也可以用「直接用一张图」免注册 |
 | 点连线报「Vidu 创建会话失败: …」 | 报错原文就是原因，常见是余额不足（<45 积分）、账号未开通实时数字人能力、或 S2 在部分账号上还是 beta——可以先在 ⚙ 里把模型切回 **S1** 试试 |
-| **🎭 换装/换背景没反应或报错** | 换装是 S2 独有能力：确认 ⚙ → 模型是 `vidu-s2`；另外参考图要能看清目标（一件衣服、一张背景图），画面渲染需要几秒才见效 |
+| **🎭 换装/换背景没反应或报错** | 换装是 S2 独有能力：确认 ⚙ → 模型是 `vidu-s2`。参考图要传**要合成进去的元素**（一件衣服 / 一张场景图 / 一个物品），**不是人像**；一次只改一类，画面里没有的部位改不了（胸像形象改不了袜子/裤子）。发完面板会显示云端回执：被拒会给出中文原因 |
+| **想换数字人本人 / 换成全身构图** | S2 **不支持通话中换形象**（通话中只能热更音色和人设）。请挂断 → ⚙ 上传新形象或「直接用一张图」→ 再连线 |
 | 点**退出**后进程还在 | v1.0.8 已修：那是 WPF 消息循环没被结束导致壳进程卡住（连带启动器一直在等它）。现在关窗会显式结束消息循环，另外启动器还有"窗口已消失 15 秒仍不退就兜底强杀"的第二道保险 |
 | 聊着聊着**自己断了** | 落地页会写明原因（静默超时 / 到达单场上限 / 服务端挂断 / 网络断开）。前两种是护栏，可在面板调长 |
 | 要反馈问题 | 把 `%LOCALAPPDATA%\CloudDH-Full\` 下的 `launcher.log`、`bridge.log`、`shell-stderr.log`、`shell-stdout.log` 和 `runtime\wallpaper-vidu-full.log` 发给作者即可定位 |
