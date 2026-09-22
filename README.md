@@ -5,6 +5,16 @@
 
 ![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.1-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
 
+## 📌 关于版本：已撤回到 v1.1.1
+
+谢谢大家的喜欢 🙏
+
+作者有了一个新的想法，打算**把这套东西整体重写一遍**——界面、交互和内部结构都要动，所以需要一段时间，等抽空再动手做。
+
+在那之前，v1.1.7 ~ v1.1.20 这几个版本**已全部撤下**，这里只保留早期比较稳的 **v1.1.1**；中间那些改动（沉浸式画面、左侧控制台、字幕样式、资产管理……）会以新的样子在重写版里回来。
+
+已经下载过老版本的朋友不影响继续使用。想用新版的，就等重写完成吧 —— 谢谢你还在。
+
 ## 📺 视频教程
 
 不想看文字？先看这个（从解压 → 填 Key → 和数字人聊起来）：
