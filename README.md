@@ -77,7 +77,7 @@
 
 ## 下载
 
-- 直接下载：[`release/CloudDH-Share-v1.1.40.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/%E4%BA%91%E7%AB%AF%E6%95%B0%E5%AD%97%E4%BA%BA-%E5%88%86%E4%BA%AB%E7%89%88-v1.1.1.zip)（约 20 MB）
+- 直接下载：[`release/CloudDH-Share-v1.1.40.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/CloudDH-Share-v1.1.40.zip)（约 20 MB）
 - 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.1.40.zip`）
 
 解压后目录：
