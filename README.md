@@ -3,7 +3,15 @@
 > 一个 Windows 悬浮窗数字人客户端：**云端包办语音识别 / 大模型 / 语音合成 / 数字人渲染**，本地只负责窗口、麦克风与信令。
 > 底层用 [Vidu](https://platform.vidu.cn) 的实时数字人能力（**S2 Live**：`/live/s_avatar/realtime`）——**你需要自备 Vidu 账号与 API Key**。
 
-![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.40-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
+![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.41-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
+
+## 🆕 v1.1.41：首次使用引导（新用户不再找不到填 Key 的地方）
+
+- 打开程序如果还没填 Vidu API Key，会**自动弹出引导页**：三步讲清「去哪注册 → 在哪拿 Key → 粘到哪」，
+  就地粘贴、点「保存并验证」**当场校验**（会告诉你账号里有几个形象 / 几个音色）。
+- 主界面的状态行会变成可点的提醒；关掉引导后随时能再点开。
+- 「打开网站」按钮走本地桥接（带域名白名单），不会把悬浮窗自己导航成网页。
+- 已经在用、填过 Key 的同学：**不会**看到这个引导，行为完全不变。
 
 ## 📌 v1.1.40：重写版已上线（全免费分享）
 
@@ -77,8 +85,8 @@
 
 ## 下载
 
-- 直接下载：[`release/CloudDH-Share-v1.1.40.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/CloudDH-Share-v1.1.40.zip)（约 20 MB）
-- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.1.40.zip`）
+- 直接下载：[`release/CloudDH-Share-v1.1.41.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/CloudDH-Share-v1.1.41.zip)（约 20 MB）
+- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.1.41.zip`）
 
 解压后目录：
 
