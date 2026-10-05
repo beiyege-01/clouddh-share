@@ -3,7 +3,14 @@
 > 一个 Windows 悬浮窗数字人客户端：**云端包办语音识别 / 大模型 / 语音合成 / 数字人渲染**，本地只负责窗口、麦克风与信令。
 > 底层用 [Vidu](https://platform.vidu.cn) 的实时数字人能力（**S2 Live**：`/live/s_avatar/realtime`）——**你需要自备 Vidu 账号与 API Key**。
 
-![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.41-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
+![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.42-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
+
+## 🆕 v1.1.42：修「一打开就提示不是原版」+ 字幕第 ⑥ 款位置
+
+- **修一个我自己写错的判断**：右下角的署名会误报「本程序已被修改，不是原作者发布的版本」——
+  原因是接口漏返回了一个字段，页面拿它跟硬编码文案比对，`undefined != 文案` 于是每次都判篡改。
+  已改成「字段确实存在且不一致才判篡改」，并且服务端补上该字段。**现在只有真的被改过的包才会报警。**
+- 字幕样式第 ⑥ 款「深色卡片」在非沉浸式下会整体偏右，已修回整窗居中。
 
 ## 🆕 v1.1.41：首次使用引导（新用户不再找不到填 Key 的地方）
 
@@ -85,8 +92,8 @@
 
 ## 下载
 
-- 直接下载：[`release/CloudDH-Share-v1.1.41.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/CloudDH-Share-v1.1.41.zip)（约 20 MB）
-- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.1.41.zip`）
+- 直接下载：[`release/CloudDH-Share-v1.1.42.zip`](https://github.com/beiyege-01/clouddh-share/raw/main/release/CloudDH-Share-v1.1.42.zip)（约 20 MB）
+- 或到 [Releases 页面](https://github.com/beiyege-01/clouddh-share/releases) 下载同一份（`CloudDH-Share-v1.1.42.zip`）
 
 解压后目录：
 
