@@ -5,6 +5,8 @@
 
 ![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-blue) ![版本](https://img.shields.io/badge/version-1.1.42-green) ![许可证](https://img.shields.io/badge/license-个人使用免费%20·%20禁止转售-red) [![视频教程](https://img.shields.io/badge/Bilibili-视频教程-00A1D6?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1xiYm6fEuN/)
 
+> 📌 **本页描述对应 v1.1.42**（更新于 2026-10-06）。每次发版我都会同步检查这里的版本相关文案。
+
 ## 🆕 v1.1.42：修「一打开就提示不是原版」+ 字幕第 ⑥ 款位置
 
 - **修一个我自己写错的判断**：右下角的署名会误报「本程序已被修改，不是原作者发布的版本」——
