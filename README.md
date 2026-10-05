@@ -144,9 +144,10 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 | **想换数字人本人 / 换成全身构图** | S2 **不支持通话中换形象**（通话中只能热更音色和人设）。请挂断 → ⚙ 上传新形象或「直接用一张图」→ 再连线 |
 | 点**退出**后进程还在 | v1.0.8 已修：那是 WPF 消息循环没被结束导致壳进程卡住（连带启动器一直在等它）。现在关窗会显式结束消息循环，另外启动器还有"窗口已消失 15 秒仍不退就兜底强杀"的第二道保险 |
 | 聊着聊着**自己断了** | 落地页会写明原因（静默超时 / 到达单场上限 / 服务端挂断 / 网络断开）。前两种是护栏，可在面板调长 |
-| 要反馈问题 | 把 `%LOCALAPPDATA%\CloudDH-Full\` 下的 `launcher.log`、`bridge.log`、`shell-stderr.log`、`shell-stdout.log` 和 `runtime\wallpaper-vidu-full.log` 发给作者即可定位 |
+| 要反馈问题 | 把 `%LOCALAPPDATA%\CloudDH-Share\` 整个目录打包发我（里面有 `launcher.log`、`bridge.log`、`shell-stderr.log`、`shell-stdout.log` 和 `runtime\wallpaper-vidu-full.log`）。**另外请一定附上**：屏幕上那段报错文字（其中灰色小字里的 `trace_id` / `live_id` 最关键）、大概发生时间、当时在做什么操作。 |
 
-运行时落盘位置：`%LOCALAPPDATA%\CloudDH-Full\`（删掉它就等于恢复出厂：Key、人设、窗口位置全清）。
+运行时落盘位置：`%LOCALAPPDATA%\CloudDH-Share\`（删掉它就等于恢复出厂：Key、人设、窗口位置全清）。
+> 分享版从 v1.1.40 起用**独立数据目录**（`CloudDH-Share`），不会读到或覆盖你机器上别的版本；删掉这个目录就等于恢复出厂（Key / 人设 / 窗口位置全清）。
 
 ## 技术栈
 
