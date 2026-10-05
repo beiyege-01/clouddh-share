@@ -133,7 +133,7 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 
 | 现象 | 原因 / 处理 |
 |---|---|
-| 双击后**窗口一闪而过 / 什么都没出现** | v1.0.8 已修：壳脚本此前缺少 UTF-8 BOM，在标准中文系统（ANSI 代码页 936）上会被 PowerShell 按 GBK 误读而解析失败，壳瞬间退出。现在脚本带 BOM、启动前还会用 PowerShell 解析器预检并弹窗说明。若仍出现，请把 `%LOCALAPPDATA%\CloudDH-Full\launcher.log` 与 `shell-stderr.log` 发出来 |
+| 双击后**窗口一闪而过 / 什么都没出现** | v1.0.8 已修：壳脚本此前缺少 UTF-8 BOM，在标准中文系统（ANSI 代码页 936）上会被 PowerShell 按 GBK 误读而解析失败，壳瞬间退出。现在脚本带 BOM、启动前还会用 PowerShell 解析器预检并弹窗说明。若仍出现，请把 `%LOCALAPPDATA%\CloudDH-Share\launcher.log` 与 `shell-stderr.log` 发出来 |
 | 双击**启动脚本**没反应（只有乱码横幅，程序没起来） | v1.1.1 已修：旧 .cmd 是 GBK 编码，而 cmd 会按控制台代码页读文件；在开了 UTF-8 代码页（ACP=65001）的机器上，连取 exe 文件名都会解错，`start` 静默失败。现在脚本为纯 ASCII。**临时办法：直接双击 `云端数字人-分享版.exe`** |
 | 窗口出来了，但里面是**纯黑一块** | 目标机没有 WebView2 运行时。重新运行 exe，弹窗问"要不要现在装"点「是」；或手动装 `WebView2Setup\` 里的安装器 |
 | 点连线按钮后一直显示**「正在连线… 12s」** | 正常范围是 5~10 秒；视频模式下云端渲染侧回连慢时会重试，冷启动可能到 20 秒以上。超过 30 秒仍无结果，落地页会给出失败原因。按钮在此期间是**故意点不动**的 |
