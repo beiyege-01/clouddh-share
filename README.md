@@ -135,6 +135,8 @@ WebView2Setup\MicrosoftEdgeWebView2Setup.exe  网页内核在线安装器（目�
 
 | 现象 | 原因 / 处理 |
 |---|---|
+| **能不能不花钱 / 本地部署？** | 分享版**没有本地模式**：ASR、LLM、TTS、渲染全在云端，本地只有窗口和麦克风，成本就是 Vidu 官方按秒计费（3 积分 / 2 秒，约 0.094 元 / 2 秒），这部分客户端改不了。想省到底走**全本地版**（DUIX，需 Windows + 16GB NVIDIA 显卡 + Docker）：https://github.com/beiyege-01/dsh-voice-ai-girlfriend ；只想把渲染交给 Vidu 的**半本地版**：https://github.com/cyber-xiaoya/cyber-xiaoya-live |
+| **要什么电脑配置？** | 分享版**不吃显卡**：Windows 10 / 11 64 位 + WebView2 即可；摄像头、麦克风按需。只有上面的全本地版才需要 NVIDIA 显卡（建议 16GB 显存） |
 | 双击后**窗口一闪而过 / 什么都没出现** | v1.0.8 已修：壳脚本此前缺少 UTF-8 BOM，在标准中文系统（ANSI 代码页 936）上会被 PowerShell 按 GBK 误读而解析失败，壳瞬间退出。现在脚本带 BOM、启动前还会用 PowerShell 解析器预检并弹窗说明。若仍出现，请把 `%LOCALAPPDATA%\CloudDH-Share\launcher.log` 与 `shell-stderr.log` 发出来 |
 | 双击**启动脚本**没反应（只有乱码横幅，程序没起来） | v1.1.1 已修：旧 .cmd 是 GBK 编码，而 cmd 会按控制台代码页读文件；在开了 UTF-8 代码页（ACP=65001）的机器上，连取 exe 文件名都会解错，`start` 静默失败。现在脚本为纯 ASCII。**临时办法：直接双击 `云端数字人-分享版.exe`** |
 | 窗口出来了，但里面是**纯黑一块** | 目标机没有 WebView2 运行时。重新运行 exe，弹窗问"要不要现在装"点「是」；或手动装 `WebView2Setup\` 里的安装器 |
